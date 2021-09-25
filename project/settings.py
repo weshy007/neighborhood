@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'neighborhood',
     'rest_framework',
+    'bootstrap4',
 
     'django.contrib.admin',
     'django.contrib.auth',

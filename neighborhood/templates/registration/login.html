@@ -1,0 +1,30 @@
+{% extends 'registration/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{% load static %}
+        <div class="bg5">
+            <div class="bottom-right" style="position: absolute;
+            bottom: 80px;
+            right: 80px;">
+                <div class="card ">
+                    <div class="card-title mt-4">
+                        <h3>MTAANI</h3>
+                        <h5>Welcome back</h5>
+                    </div>
+                    <div class="card-body mb-3 mr-3 ml-3">
+                        <form action="" method="post" novalidate>
+                            {% csrf_token%}
+
+                            {% bootstrap_form form layout='inline' %}
+                            <button type="submit" class="btn btn-outline-dark btn-sm D-block " style="width: 230px;"> Log In</button>
+                        </form>
+                    </div>
+                    <a href="" class="D-block mx-auto mb-3">Forgot password? </a>
+                    <div class="card-body mt-3 mb-3 mr-2 ml-4">
+                        Don't have an account? <a href="/accounts/register">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
