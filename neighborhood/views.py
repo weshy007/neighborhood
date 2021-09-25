@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Profile,Neighborhood,Business,Post
+from rest_framework.views import APIView
 
 # Create your views here.
 def index(request):
@@ -26,4 +27,10 @@ def leave(request):
 
 @login_required(login_url='/accounts/login/')
 def search_profile(request):
+    pass
+
+class ProfileList(APIView):
+    pass
+
+class UserList(APIView):
     pass
