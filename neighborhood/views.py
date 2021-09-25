@@ -31,7 +31,18 @@ def profile(request, username):
 
 @login_required(login_url='/accounts/login/')
 def hoods(request):
-    pass
+    hoods = Neighborhood.objects.all()
+    form = NeighborHoodForm(request.POST, request.FILES)
+    print(form.errors)
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.admin = request.user.profile
+        post.save()
+        return redirect('hoods')
+    else:
+        form = NeighborHoodForm(request.POST, request.FILES)
+
+    return render(request,'all_hoods.html',{"all_hoods":hoods,"form":form})
 
 @login_required(login_url='/accounts/login/')
 def single_hood(request, hood_id):
