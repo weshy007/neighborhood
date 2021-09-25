@@ -1,0 +1,63 @@
+{%extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block styles %}
+
+{% bootstrap_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div class="bg2">
+    {% include "navbar.html" %}
+    <div class="top-left" style=" position: absolute;
+top: 120px;
+left: 100px;">
+        {% if profile %}
+        <img src="{{ user.profile.photo.url }}" style=" height: 130px; width: 130px; margin-top: 40px;">
+        {% else %}
+        <img src="/static/images/default.jpeg" style=" height: 130px; width: 130px; margin-top: 40px;">
+        {% endif %}
+    </div>
+</div>
+<div class="row" style="height: 300px;">
+    <div class="col-4">
+    </div>
+    <div class="col-4" style="text-align: center;">
+        {% if user.profile.name %}
+        <h2 style="text-align: center; font-family: 'Oranienbaum', serif; margin-top: 30px ;">{{ user.profile.name }}</h2>
+        {% else %}
+        <h2 style="text-align: center; font-family: 'Oranienbaum', serif; margin-top: 30px ;">{{ user.username }}</h2>
+        {% endif %}
+        <p style="text-align: center; font-family: 'Oranienbaum', serif;">{{ user.email }}</p>
+        <p style="text-align: center; font-family: 'Oranienbaum', serif;">{{ user.profile.hood.name }}</p>
+
+    </div>
+    <div class="col-4">
+        <button type="button" style="margin-top: 30px ;" class="btn btn-outline-dark" data-toggle="modal" data-target=".bd-modal-md">Edit</button>
+        <a href="/accounts/logout"><button type="button" style="margin-top: 30px ;" class="btn btn-outline-dark">Logout</button></a>
+    </div>
+</div>
+<div class="modal fade bd-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md ">
+        <div class="modal-content">
+            <form action="" method="post" novalidate enctype="multipart/form-data" class="mr-4 mt-4 ml-4 mb-4">
+                {% csrf_token%}
+                {% bootstrap_form user_form layout='inline' %}
+                {% bootstrap_form profile_form layout='inline' %}
+                <button type="submit" class="btn btn-primary btn-sm"> Update Profile</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

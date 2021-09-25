@@ -28,5 +28,5 @@
 
 ## Licence, Author & Copyright
 This project is Licensed under the MIT Licence - see the [LICENCE](https://github.com/weshy007/neighborhood/blob/master/LICENCE "Licence") file for details
-- copyright 2021 - Waithaka Waweru
-- 💼 Any feedback? Please do reach me on, [Send an Email](mailto:josephwaweru96@gmail.com)
+- Copyright 2021 - Waithaka Waweru
+- Any feedback? Please do reach me on, [Send an Email](mailto:josephwaweru96@gmail.com)
