@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 
 # Create your views here.
 def index(request):
-    pass
+    return render(request, 'index.html')
 
 @login_required(login_url='/accounts/login/')
 def profile(request):

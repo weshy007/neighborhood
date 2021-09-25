@@ -1,0 +1,105 @@
+
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block styles %}
+
+{% bootstrap_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+
+
+<div class="bg">
+    {% include "navbar.html" %}
+    <div class="top-left" style=" position: absolute;
+    top: 50px;
+    left: 80px;">
+    </div>
+    <div class="bottom-left" style="position: absolute;
+    bottom: 50px;
+    left: 80px;">
+    </div>
+    <div class="top-right" style=" position: absolute;
+    top: 50px;
+    right: 80px;">
+    </div>
+ 
+    <div class="centered" style="position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);">
+        <h1 style="color: white; font-family: 'Squada One', cursive;">Plug into your neighborhood</h1>
+        <form class="form-inline my-2 my-lg-0" id="searchform" action="{% url 'results' %}">
+            <input class="form-control mr-sm-2" type="search" name="search_user" placeholder="Businesses around you.."
+                aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="height: 300px; margin-top: 60px;">
+        <div class="col-6">
+            <h3 style=" font-family: 'Squada One', cursive;">Get the most out of your neighborhood with Nextdoor</h3>
+        </div>
+        <div class="col-6">
+            <p style="font-family: 'Quicksand', sans-serif;">It's where communities come together to greet newcomers,
+                exchange recommendations, and read the latest
+                local news. Where neighbors support local businesses and get updates from public agencies. Where
+                neighbors borrow tools and sell couches. It's how to get the most out of everything nearby. Welcome,
+                neighbor.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center" style=" font-family: 'Squada One', cursive;">Instantly connect with your
+                neighborhood
+            </h3>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 30px;" >
+    <div class="row" style="height: 400px;font-family: 'Quicksand', sans-serif;">
+        <div class="col-3">
+            <h4>Nextdoor</h4>
+            <h5>About</h5>
+            <h5>News</h5>
+            <h5>Media</h5>
+            <h5>Blog</h5>
+            <h5>Careers</h5>
+        </div>
+        <div class="col-3">
+            <h4>Neighbors</h4>
+            <h5>Get Started</h5>
+            <h5>Events</h5>
+            <h5>Neighborhoods</h5>
+            <h5>Guidelines</h5>
+        </div>
+        <div class="col-3">
+            <h4>Agencies</h4>
+            <h5>Public Agencies</h5>
+            <h5>Public Agencies Blog</h5>
+        </div>
+        <div class="col-3">
+            <h4>Business</h4>
+            <h5>Local Business</h5>
+            <h5>Enterprise</h5>
+            <h5>Real Estate</h5>
+            <h5>Local Business Blog</h5>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

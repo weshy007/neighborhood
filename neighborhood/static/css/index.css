@@ -1,0 +1,65 @@
+.bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/condominium-690086_1920.jpg");
+    min-height: 640px;
+  }
+  .back {
+    margin-right: 200px;
+    margin-top: 30px;
+    color: white !important;
+  }
+  .bg1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/breno-assis-r3WAWU5Fi5Q-unsplash.jpg");
+    min-height: 640px;
+  }
+  .bg2 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/phil-hearing-S-u8inGir1w-unsplash.jpg");
+    min-height: 250px;
+  }
+  .bg3 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/markus-winkler-afW1hht0NSs-unsplash.jpg");
+    min-height: 250px;
+  }
+  .bg4 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
+    min-height: 250px;
+  }
+  .bg5 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-image: url("../img/peter-idowu-xA0HEsQTcpc-unsplash.jpg");
+    min-height: 640px;
+  }
