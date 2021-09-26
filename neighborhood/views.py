@@ -1,9 +1,12 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Neighborhood,Business,Post
+from django.http.response import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect, render
 from rest_framework.views import APIView
-from .forms import UpdateUserForm, ProfileForm, NeighborHoodForm, BusinessForm, PostForm
+
+from .forms import (BusinessForm, NeighborHoodForm, PostForm, ProfileForm,
+                    UpdateUserForm)
+from .models import Business, Neighborhood, Post, Profile
+
 
 # Create your views here.
 def index(request):
@@ -95,7 +98,17 @@ def leave(request):
 
 @login_required(login_url='/accounts/login/')
 def search_profile(request):
-    pass
+    if 'search_user' in request.GET and request.GET['search_user']:
+        name = request.GET.get("search_user")
+        results = Business.search_business(name)
+        print(results)
+        message = f'name'
+
+        return render(request, 'results.html', {'message': message, 'results': results})
+    else:
+        message = "You did not make any selection"
+
+        return render(request, 'results.html', {'message': message})
 
 class ProfileList(APIView):
     pass
