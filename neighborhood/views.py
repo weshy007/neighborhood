@@ -1,11 +1,14 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .forms import (BusinessForm, NeighborHoodForm, PostForm, ProfileForm,
                     UpdateUserForm)
 from .models import Business, Neighborhood, Post, Profile
+from .serializer import ProfileSerializer, UserSerializer
 
 
 # Create your views here.
@@ -111,7 +114,13 @@ def search_profile(request):
         return render(request, 'results.html', {'message': message})
 
 class ProfileList(APIView):
-    pass
+     def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
 
 class UserList(APIView):
-    pass
+    def get(self, request, format=None):
+        all_user = User.objects.all()
+        serializers = UserSerializer(all_user, many=True)
+        return Response(serializers.data)
