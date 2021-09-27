@@ -4,16 +4,19 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.http import JsonResponse
 
 from .forms import (BusinessForm, NeighborHoodForm, PostForm, ProfileForm,
-                    UpdateUserForm)
-from .models import Business, Neighborhood, Post, Profile
+                    UpdateUserForm, NewsLetterForm)
+from .models import Business, Neighborhood, Post, Profile, NewsLetterRecipients
 from .serializer import ProfileSerializer, UserSerializer
+from .email import send_welcome_email
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    form = NewsLetterForm()
+    return render(request, 'index.html', {"letterForm":form})
 
 @login_required(login_url='/accounts/login/')
 def profile(request, username):
@@ -112,6 +115,16 @@ def search_profile(request):
         message = "You did not make any selection"
 
         return render(request, 'results.html', {'message': message})
+
+def newsletter(request):
+    name = request.POST.get('your_name')
+    email = request.POST.get('email')
+
+    recipient = NewsLetterRecipients(name=name, email=email)
+    recipient.save()
+    send_welcome_email(name, email)
+    data = {'success:' 'You have been successfully added to DOWNTOWN mailing list'}
+    return JsonResponse(data)
 
 class ProfileList(APIView):
      def get(self, request, format=None):
