@@ -9,6 +9,9 @@ urlpatterns=[
     path('results/',views.search_profile,name = 'results'),
     path('join_hood/<id>',views.join,name='join'),
     path('leave_hood/<id>',views.leave,name='leave'),
+
+    path('ajax/newsletter/', views.newsletter, name='newsletter'),
+
     path('api/profile/', views.ProfileList.as_view()),
     path('api/users/', views.UserList.as_view()),
 ]

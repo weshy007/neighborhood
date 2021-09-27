@@ -1,0 +1,5 @@
+Hello {{name}}
+
+Welcome to Delani Ratings. You will find the recent projects from your friends and profiles you follow. You will be receiving promotional email, events related to us.
+
+We welcome you onboard
