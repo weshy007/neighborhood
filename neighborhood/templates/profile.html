@@ -24,9 +24,9 @@
 top: 120px;
 left: 100px;">
         {% if profile %}
-        <img src="{{ user.profile.photo.url }}" style=" height: 130px; width: 130px; margin-top: 40px;">
+        <img src="{{ user.profile.photo.url }}" style=" height: 130px; width: 130px; margin-top: 40px; border-radius: 50%;">
         {% else %}
-        <img src="/static/images/default.jpeg" style=" height: 130px; width: 130px; margin-top: 40px;">
+        <img src="/static/images/default.jpeg" style=" height: 130px; width: 130px; margin-top: 40px; border-radius: 50%;">
         {% endif %}
     </div>
 </div>
