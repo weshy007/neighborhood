@@ -11,15 +11,14 @@
     <h5 class="text-white" style="font-size: 30px;">Found {{results.count}} Business{{results.count|pluralize}}</h5>
     </div>
 </div>
-<div class="container">
+<div class="container" style="padding: 1rem;">
     {% if results %}
     <div class="row">
         <div class="col-md-4">
             {% for bus in results %}
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">{{bus.name}}
-                        </h5>
+                        <h5 class="card-title"><b>{{bus.name}}</b></h5> 
                         <p class="card-text">{{bus.description}}</p>
                         <p class="card-text">Owner: <small class="text-muted">
                             {{ bus.user.user.username|title }}</small></p>

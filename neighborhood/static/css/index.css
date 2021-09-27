@@ -1,3 +1,4 @@
+/* index */
 .bg {
     background-position: center;
     background-repeat: no-repeat;
@@ -13,7 +14,7 @@
     margin-top: 30px;
     color: white !important;
   }
-  /* Landing */
+  /* All hood */
   .bg1 {
     background-position: center;
     background-repeat: no-repeat;
@@ -21,9 +22,10 @@
     position: relative;
     text-align: center;
     color: black;
-    background-image: url("../img/breno-assis-r3WAWU5Fi5Q-unsplash.jpg");
     min-height: 640px;
+    background-image: url("../images/nairobi2.jpg");
   }
+  /* profile */
   .bg2 {
     background-position: center;
     background-repeat: no-repeat;
@@ -31,9 +33,10 @@
     position: relative;
     text-align: center;
     color: black;
-    background-image: url("../img/phil-hearing-S-u8inGir1w-unsplash.jpg");
     min-height: 250px;
+    background-image: url("../images/landing.jpg");
   }
+  /* results */
   .bg3 {
     background-position: center;
     background-repeat: no-repeat;
@@ -41,9 +44,10 @@
     position: relative;
     text-align: center;
     color: black;
-    background-image: url("../img/markus-winkler-afW1hht0NSs-unsplash.jpg");
     min-height: 250px;
+    background-image: url("../images/kids.jpg");
   }
+  /* single hood */
   .bg4 {
     background-position: center;
     background-repeat: no-repeat;
@@ -51,7 +55,6 @@
     position: relative;
     text-align: center;
     color: black;
-    background-image: url("../img/bethany-opler-h95mT1m9Zzs-unsplash.jpg");
     min-height: 250px;
   }
   /* Login page */
