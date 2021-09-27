@@ -100,3 +100,7 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='post_owner')
     hood = models.ForeignKey('NeighborHood', on_delete=models.CASCADE, related_name='hood_post')
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
