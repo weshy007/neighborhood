@@ -18,8 +18,8 @@
 - Django (framework)
 - Bootstrap
 
-<!-- ## Live Link
-- Please get to check out the App on [Delani Ratings](https://lophagw3.herokuapp.com/ "Delani Ratingz") -->
+## Live Link
+- Please get to check out the App on [The Neighborhood](https://lophagw4.herokuapp.com/ "DOWNTOWN")
 
 ## Running Application
 - Clone the App `git clone https://github.com/weshy007/neighborhood`
